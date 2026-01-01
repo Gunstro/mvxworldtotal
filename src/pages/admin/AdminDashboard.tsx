@@ -223,6 +223,7 @@ export function AdminDashboard() {
         { id: 'matrix', icon: Network, label: 'Matrix' },
         { id: 'genealogy', icon: Users, label: 'Genealogy' },
         { id: 'funds', icon: PiggyBank, label: 'Funds' },
+        { id: 'megabucks', icon: Coins, label: 'MegaBucks', link: '/admin/megabucks' },
     ]
 
     if (isLoading) {
@@ -279,17 +280,28 @@ export function AdminDashboard() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex gap-1">
                         {tabs.map(tab => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id as any)}
-                                className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors ${activeTab === tab.id
-                                    ? 'border-red-500 text-red-400'
-                                    : 'border-transparent text-gray-400 hover:text-white'
-                                    }`}
-                            >
-                                <tab.icon className="w-4 h-4" />
-                                {tab.label}
-                            </button>
+                            tab.link ? (
+                                <Link
+                                    key={tab.id}
+                                    to={tab.link}
+                                    className="flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors border-transparent text-gray-400 hover:text-cyan-400"
+                                >
+                                    <tab.icon className="w-4 h-4" />
+                                    {tab.label}
+                                </Link>
+                            ) : (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id as any)}
+                                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors ${activeTab === tab.id
+                                        ? 'border-red-500 text-red-400'
+                                        : 'border-transparent text-gray-400 hover:text-white'
+                                        }`}
+                                >
+                                    <tab.icon className="w-4 h-4" />
+                                    {tab.label}
+                                </button>
+                            )
                         ))}
                     </div>
                 </div>
