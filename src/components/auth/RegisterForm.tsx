@@ -273,15 +273,15 @@ export function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFormProps) 
                                             </div>
                                             <div className="flex items-center gap-3 mt-2 text-xs">
                                                 <span style={{ color: isFree ? '#22c55e' : '#f5f5f5' }}>
-                                                    {isFree ? 'FREE' : `£${parseFloat(visa.price).toLocaleString('en-GB')}`}
+                                                    {isFree ? 'FREE' : `AF ${parseFloat(visa.price).toLocaleString('en-GB')}`}
                                                 </span>
                                                 {!isLifetime && parseFloat(visa.monthly_fee) > 0 && (
                                                     <span style={{ color: '#666666' }}>
-                                                        +£{parseFloat(visa.monthly_fee).toLocaleString('en-GB')}/mo
+                                                        +AF {parseFloat(visa.monthly_fee).toLocaleString('en-GB')}/mo
                                                     </span>
                                                 )}
                                                 <span style={{ color: '#d4af37' }}>
-                                                    Cap: £{parseFloat(visa.income_cap).toLocaleString('en-GB')}
+                                                    Cap: AF {parseFloat(visa.income_cap).toLocaleString('en-GB')}
                                                 </span>
                                                 {visa.shares > 0 && (
                                                     <span style={{ color: '#9333ea' }}>

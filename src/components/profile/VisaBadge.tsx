@@ -21,7 +21,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-gray-600 to-gray-800',
         icon: '/assets/visa-badges/free512.png.png',
         advantages: [
-            '£95/month earning cap',
+            'AF 95/month earning cap',
             'Basic community access',
             'Standard support',
             'Access to marketplace',
@@ -37,7 +37,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-stone-500 to-stone-700',
         icon: '/assets/visa-badges/novice512.png.png',
         advantages: [
-            '£295/month earning cap',
+            'AF 295/month earning cap',
             'Community builder tools',
             'Priority support',
             'Advanced analytics',
@@ -53,7 +53,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-amber-700 to-orange-900',
         icon: '/assets/visa-badges/city-dweller512.png.png',
         advantages: [
-            '£395/month earning cap',
+            'AF 395/month earning cap',
             'Video hosting',
             'Custom profile themes',
             'Advertising agent access',
@@ -69,7 +69,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-gray-300 to-gray-500',
         icon: '/assets/visa-badges/city-patron512.png.png',
         advantages: [
-            '£495/month earning cap',
+            'AF 495/month earning cap',
             'Premium badge frame',
             'NFT shack registration',
             'Loan eligibility',
@@ -85,7 +85,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-gray-800 to-black',
         icon: '/assets/visa-badges/executive 512.png.png',
         advantages: [
-            '£695/month earning cap',
+            'AF 695/month earning cap',
             'Executive lounge access',
             'Enhanced commission rates',
             'White-label options',
@@ -101,7 +101,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-yellow-600 to-yellow-800',
         icon: '/assets/visa-badges/ambassador 512.png.png',
         advantages: [
-            '£985/month earning cap',
+            'AF 985/month earning cap',
             'Ambassador title',
             'Global events access',
             'Revenue sharing program',
@@ -117,7 +117,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-yellow-400 to-yellow-600',
         icon: '/assets/visa-badges/premiere 512.png.png',
         advantages: [
-            '£1,250/month earning cap',
+            'AF 1,250/month earning cap',
             'Premiere verification badge',
             'Priority placement',
             'Custom branding',
@@ -133,7 +133,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-yellow-500 to-amber-700',
         icon: '/assets/visa-badges/gold-premiere 512.png.png',
         advantages: [
-            '£2,250/month earning cap',
+            'AF 2,250/month earning cap',
             'Gold verification badge',
             'VIP support',
             'Exclusive partner program',
@@ -149,7 +149,7 @@ export const VISA_TIERS: Record<string, VisaTier> = {
         gradient: 'from-black via-yellow-600 to-black',
         icon: '/assets/visa-badges/vip-founder 512.png.png',
         advantages: [
-            '£3,750/month earning cap',
+            'AF 3,750/month earning cap',
             'VIP Founder crown badge',
             'Lifetime benefits',
             'Board member access',
@@ -266,13 +266,13 @@ export function VisaBadge({
                         <div className="flex justify-between text-sm">
                             <span className="text-gray-600">Monthly Fee:</span>
                             <span className="font-semibold">
-                                {visaTier.monthlyFee === 0 ? 'FREE' : `£${visaTier.monthlyFee}`}
+                                {visaTier.monthlyFee === 0 ? 'FREE' : `AF ${visaTier.monthlyFee}`}
                             </span>
                         </div>
                         <div className="flex justify-between text-sm mt-1">
                             <span className="text-gray-600">Monthly Cap:</span>
                             <span className="font-semibold text-green-600">
-                                {visaTier.monthlyCap >= 999999 ? 'UNLIMITED' : `£${visaTier.monthlyCap}`}
+                                {visaTier.monthlyCap >= 999999 ? 'UNLIMITED' : `AF ${visaTier.monthlyCap}`}
                             </span>
                         </div>
                     </div>

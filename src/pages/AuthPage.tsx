@@ -83,7 +83,7 @@ export function AuthPage() {
                                     <div className="text-xs" style={{ color: '#888888' }}>Active Users</div>
                                 </div>
                                 <div>
-                                    <div className="text-xl lg:text-2xl font-bold" style={{ color: '#d4af37' }}>£5M+</div>
+                                    <div className="text-xl lg:text-2xl font-bold" style={{ color: '#d4af37' }}>AF 5M+</div>
                                     <div className="text-xs" style={{ color: '#888888' }}>Earned Monthly</div>
                                 </div>
                                 <div>
@@ -121,7 +121,7 @@ export function AuthPage() {
                                 <div className="text-left">
                                     <div className="text-sm font-semibold" style={{ color: '#f5f5f5' }}>Gunnar</div>
                                     <div className="text-xs" style={{ color: '#d4af37' }}>
-                                        Top Earner - £2,400/month
+                                        Top Earner - AF 2,400/month
                                     </div>
                                 </div>
                             </div>

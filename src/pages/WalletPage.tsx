@@ -294,7 +294,7 @@ export function WalletPage() {
                     <h3 className="font-semibold text-gray-900 mb-4">Withdraw MegaBucks</h3>
                     <p className="text-gray-500 mb-6">
                         Convert your MegaBucks to real money. Minimum withdrawal: 500 MB.
-                        Current rate: 1 MB = £0.01
+                        Current rate: 1 MB = AF 0.01
                     </p>
 
                     <div className="space-y-4">
@@ -337,7 +337,7 @@ export function WalletPage() {
                             <div className="border-t border-gray-200 pt-2 mt-2">
                                 <div className="flex justify-between">
                                     <span className="font-medium text-gray-700">You receive</span>
-                                    <span className="font-bold text-green-600">£9.80</span>
+                                    <span className="font-bold text-green-600">AF 9.80</span>
                                 </div>
                             </div>
                         </div>

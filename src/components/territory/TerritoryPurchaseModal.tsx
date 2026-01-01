@@ -201,7 +201,7 @@ export const TerritoryPurchaseModal: React.FC<TerritoryPurchaseModalProps> = ({
                                 <span className="text-gray-400">Price</span>
                                 <span className="text-2xl font-bold text-white flex items-center gap-1">
                                     <PoundSterling className="w-6 h-6" />
-                                    £{territoryData.price.toLocaleString('en-GB')}
+                                    AF {territoryData.price.toLocaleString('en-GB')}
                                 </span>
                             </div>
                         </div>
@@ -306,7 +306,7 @@ export const TerritoryPurchaseModal: React.FC<TerritoryPurchaseModalProps> = ({
                             <div className="flex items-center justify-center gap-2">
                                 <Coins className="w-8 h-8 text-amber-400 animate-pulse" />
                                 <span className="text-5xl font-bold text-amber-400 font-mono">
-                                    £{revealedAmount.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                    AF {revealedAmount.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                 </span>
                             </div>
                             <p className="text-amber-200/70 mt-2">
@@ -347,7 +347,7 @@ export const TerritoryPurchaseModal: React.FC<TerritoryPurchaseModalProps> = ({
                                         Surprise Bonus
                                     </span>
                                     <span className="text-amber-400 font-bold">
-                                        £{purchaseResult.surprise_bonus.toLocaleString('en-GB')}
+                                        AF {purchaseResult.surprise_bonus.toLocaleString('en-GB')}
                                     </span>
                                 </div>
                             )}

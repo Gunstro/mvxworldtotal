@@ -126,7 +126,7 @@ const OwnedTerritoryCard: React.FC<OwnedTerritoryCardProps> = ({
                 {totalEarnings !== undefined && (
                     <div className="text-emerald-400 font-semibold flex items-center gap-1">
                         <PoundSterling className="w-3 h-3" />
-                        £{totalEarnings.toLocaleString('en-GB')}
+                        AF {totalEarnings.toLocaleString('en-GB')}
                     </div>
                 )}
             </div>
@@ -167,7 +167,7 @@ const TransactionItem: React.FC<TransactionItemProps> = ({
                 </div>
             </div>
             <div className={`font-semibold ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
-                {isPositive ? '+' : ''}£{Math.abs(amount).toLocaleString('en-GB')}
+                {isPositive ? '+' : ''}AF {Math.abs(amount).toLocaleString('en-GB')}
             </div>
         </div>
     );
@@ -270,19 +270,19 @@ export const TerritoryDashboard: React.FC<TerritoryDashboardProps> = ({
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div>
                             <div className="text-3xl font-bold text-white">
-                                £{wallet.available_balance.toLocaleString('en-GB')}
+                                AF {wallet.available_balance.toLocaleString('en-GB')}
                             </div>
                             <div className="text-sm text-gray-400">Available Balance</div>
                         </div>
                         <div>
                             <div className="text-xl font-semibold text-amber-400">
-                                £{wallet.pending_balance.toLocaleString('en-GB')}
+                                AF {wallet.pending_balance.toLocaleString('en-GB')}
                             </div>
                             <div className="text-sm text-gray-400">Pending</div>
                         </div>
                         <div>
                             <div className="text-xl font-semibold text-emerald-400">
-                                £{wallet.total_earned.toLocaleString('en-GB')}
+                                AF {wallet.total_earned.toLocaleString('en-GB')}
                             </div>
                             <div className="text-sm text-gray-400">Total Earned</div>
                         </div>
@@ -456,10 +456,10 @@ export const TerritoryDashboard: React.FC<TerritoryDashboardProps> = ({
                                         </td>
                                         <td className="py-3 text-right text-gray-400">{earning.total_sales}</td>
                                         <td className="py-3 text-right text-gray-400">
-                                            £{earning.total_sale_value.toLocaleString('en-GB')}
+                                            AF {earning.total_sale_value.toLocaleString('en-GB')}
                                         </td>
                                         <td className="py-3 text-right text-emerald-400 font-semibold">
-                                            £{earning.total_commission.toLocaleString('en-GB')}
+                                            AF {earning.total_commission.toLocaleString('en-GB')}
                                         </td>
                                     </tr>
                                 ))}
