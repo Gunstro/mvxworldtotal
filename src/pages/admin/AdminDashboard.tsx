@@ -93,11 +93,29 @@ export function AdminDashboard() {
             // Open spots calculation not available (no is_open_spot column)
             const openSpotsCount = 0
 
-            // TODO: Fix wallet queries (column names don't match)
-            const walletsCount = 0
-            const totalAfro = 0
+            // Fetch real wallet data
+            const { count: walletsCount } = await supabase
+                .from('user_wallets')
+                .select('*', { count: 'exact', head: true })
+
+            // Total AF in circulation (sum of all user wallet balances)
+            const { data: walletSums } = await supabase
+                .from('user_wallets')
+                .select('available_balance, pending_balance, total_earned')
+
+            const totalAfro = walletSums?.reduce((sum, w) =>
+                sum + parseFloat(w.available_balance || 0) + parseFloat(w.pending_balance || 0), 0) || 0
+
+            // Fetch Poverty Fund balance
+            const { data: povertyData } = await supabase
+                .from('poverty_fund')
+                .select('total_balance, total_received')
+                .single()
+
+            const povertyFund = parseFloat(povertyData?.total_balance || 0)
+
+            // TODO: Fetch from megabucks tables when implemented
             const totalMB = 0
-            const povertyFund = 0
             const mbBacking = 0
             const operating = 0
 
@@ -362,7 +380,7 @@ export function AdminDashboard() {
                                     <h3 className="text-lg font-semibold text-white">AFRO (AF)</h3>
                                 </div>
                                 <div className="text-3xl font-bold text-green-400">
-                                    £{(stats?.totalAfroInCirculation || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
+                                    AF {(stats?.totalAfroInCirculation || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
                                 </div>
                                 <div className="text-sm text-gray-400 mt-1">Total AF in user wallets</div>
                             </Card>
@@ -454,7 +472,7 @@ export function AdminDashboard() {
                                                 </td>
                                                 <td className="py-3 px-4">{user.children_count}</td>
                                                 <td className="py-3 px-4 text-green-400">
-                                                    £{parseFloat(user.afro_available as any).toFixed(2)}
+                                                    AF {parseFloat(user.afro_available as any).toFixed(2)}
                                                 </td>
                                                 <td className="py-3 px-4 text-cyan-400">
                                                     {parseInt(user.megabucks_balance as any).toLocaleString()} MB
@@ -496,7 +514,7 @@ export function AdminDashboard() {
                                     <h3 className="text-lg font-semibold text-white">Poverty Fund</h3>
                                 </div>
                                 <div className="text-4xl font-bold text-amber-400 mb-2">
-                                    £{(stats?.povertyFundBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
+                                    AF {(stats?.povertyFundBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
                                 </div>
                                 <p className="text-sm text-gray-400">
                                     For poverty relief programs and MB backing
@@ -509,7 +527,7 @@ export function AdminDashboard() {
                                     <h3 className="text-lg font-semibold text-white">MB Backing</h3>
                                 </div>
                                 <div className="text-4xl font-bold text-cyan-400 mb-2">
-                                    £{(stats?.mbBackingBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
+                                    AF {(stats?.mbBackingBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
                                 </div>
                                 <p className="text-sm text-gray-400">
                                     100% backs all MegaBucks in circulation
@@ -522,7 +540,7 @@ export function AdminDashboard() {
                                     <h3 className="text-lg font-semibold text-white">Operating</h3>
                                 </div>
                                 <div className="text-4xl font-bold text-green-400 mb-2">
-                                    £{(stats?.operatingBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
+                                    AF {(stats?.operatingBalance || 0).toLocaleString('en-GB', { minimumFractionDigits: 2 })}
                                 </div>
                                 <p className="text-sm text-gray-400">
                                     Company operational funds
