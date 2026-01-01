@@ -19,6 +19,7 @@ import { ProfileDemoPage } from '@/pages/ProfileDemoPage'
 import { LegacyFounderImport } from '@/pages/admin/LegacyFounderImport'
 import { AdminDashboard } from '@/pages/admin/AdminDashboard'
 import { AdminMDPManagement } from '@/pages/admin/AdminMDPManagement'
+import { MBManagement } from '@/pages/admin/MBManagement'
 import { BluetoothMDPRegister } from '@/pages/mdp/BluetoothMDPRegister'
 import { MyTeamPage } from '@/pages/MyTeamPage'
 
@@ -108,6 +109,7 @@ function AppRoutes() {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/import-founders" element={<LegacyFounderImport />} />
         <Route path="/admin/mdp" element={<AdminMDPManagement />} />
+        <Route path="/admin/megabucks" element={<MBManagement />} />
 
         {/* MDP routes */}
         <Route path="/mdp/register" element={<BluetoothMDPRegister />} />
